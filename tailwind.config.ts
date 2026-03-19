@@ -6,21 +6,22 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        background: '#FDF8F3',
-        surface: '#FAF5EF',
-        primary: '#3D3229',
-        secondary: '#6B5D4D',
+        background: 'var(--color-background)',
+        surface: 'var(--color-surface)',
+        primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)',
         accent: {
-          DEFAULT: '#C4A77D',
-          hover: '#B39668',
-          light: '#D4BC95',
+          DEFAULT: 'var(--color-accent)',
+          hover: 'var(--color-accent-hover)',
+          light: 'var(--color-accent-light)',
         },
-        border: '#E8DFD4',
-        highlight: '#F5EDE4',
-        muted: '#8B7B6B',
+        border: 'var(--color-border)',
+        highlight: 'var(--color-highlight)',
+        muted: 'var(--color-muted)',
       },
       fontFamily: {
         heading: ['var(--font-sora)', 'sans-serif'],
