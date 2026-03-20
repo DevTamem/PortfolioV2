@@ -1,18 +1,12 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail, MapPin, Send } from 'lucide-react'
+import { Github, Linkedin, MapPin, Send, Instagram } from 'lucide-react'
 import { SectionWrapper } from '@/components/shared/SectionWrapper'
 import { Button } from '@/components/ui/button'
 import { socialLinks, personalInfo } from '@/lib/data'
 
 const contactMethods = [
-  {
-    icon: Mail,
-    label: 'Email',
-    value: socialLinks.email,
-    href: `mailto:${socialLinks.email}`,
-  },
   {
     icon: Github,
     label: 'GitHub',
@@ -24,6 +18,12 @@ const contactMethods = [
     label: 'LinkedIn',
     value: personalInfo.name,
     href: socialLinks.linkedin,
+  },
+  {
+    icon: Instagram,
+    label: 'Instagram',
+    value: '@devtamem',
+    href: socialLinks.instagram,
   },
 ]
 
@@ -76,7 +76,7 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="grid sm:grid-cols-3 gap-4 mb-10"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10"
         >
           {contactMethods.map((method, index) => {
             const Icon = method.icon
