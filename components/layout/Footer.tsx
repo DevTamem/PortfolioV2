@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail, Heart } from 'lucide-react'
+import { Github, Linkedin, Mail, Heart, Instagram } from 'lucide-react'
 import { socialLinks, personalInfo } from '@/lib/data'
 
 export function Footer() {
@@ -52,6 +52,15 @@ export function Footer() {
               aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
+            </a>
+            <a
+              href={socialLinks.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full text-secondary hover:text-accent hover:bg-accent/10 transition-all duration-300"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-5 h-5" />
             </a>
             <a
               href={`mailto:${socialLinks.email}`}
