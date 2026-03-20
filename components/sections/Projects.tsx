@@ -3,9 +3,13 @@
 import { motion } from 'framer-motion'
 import { SectionWrapper } from '@/components/shared/SectionWrapper'
 import { ProjectCard } from '@/components/shared/ProjectCard'
+import { PlaceholderCard } from '@/components/shared/PlaceholderCard'
 import { projects } from '@/lib/data'
 
 export function Projects() {
+  const featuredProjects = projects.filter(p => p.featured)
+  const otherProjects = projects.filter(p => !p.featured)
+
   return (
     <SectionWrapper id="projects" className="bg-surface/50">
       <div className="text-center mb-12">
@@ -36,14 +40,28 @@ export function Projects() {
         </motion.p>
       </div>
 
-      <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-8 max-w-4xl mx-auto">
-        {projects.map((project, index) => (
+      <div className="max-w-4xl mx-auto space-y-8">
+        {/* Featured projects */}
+        {featuredProjects.map((project, index) => (
           <ProjectCard
             key={project.title}
             project={project}
             index={index}
           />
         ))}
+
+        {/* Non-featured projects + placeholder cards in a row */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {otherProjects.map((project, index) => (
+            <ProjectCard
+              key={project.title}
+              project={project}
+              index={index + 1}
+            />
+          ))}
+          <PlaceholderCard index={otherProjects.length + 1} />
+          <PlaceholderCard index={otherProjects.length + 2} />
+        </div>
       </div>
 
       {/* Call to action for more projects */}
