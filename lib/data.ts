@@ -63,6 +63,7 @@ export type Project = {
     live?: string
   }
   featured?: boolean
+  inProgress?: boolean
 }
 
 export const projects: Project[] = [
@@ -71,6 +72,7 @@ export const projects: Project[] = [
     description: 'A developer-focused social platform for builders',
     longDescription: 'Projecty is a developer-focused social platform where builders can publish projects, discover what others are creating, post short-form technical threads, join coding challenges, and grow through community engagement.',
     featured: true,
+    inProgress: true,
     technologies: [
       {
         category: 'Frontend',
@@ -85,10 +87,7 @@ export const projects: Project[] = [
         items: ['ESLint', 'Concurrently', 'dotenv'],
       },
     ],
-    links: {
-      github: '#',
-      live: '#',
-    },
+    links: {},
   },
 ]
 

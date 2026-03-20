@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ExternalLink, Github } from 'lucide-react'
+import { ExternalLink, Github, Clock } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -85,6 +85,12 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                   Live Demo
                 </Button>
               </a>
+            )}
+            {project.inProgress && !project.links.github && !project.links.live && (
+              <Badge variant="secondary" className="inline-flex items-center gap-1.5 px-3 py-1.5">
+                <Clock className="w-3.5 h-3.5" />
+                In Progress
+              </Badge>
             )}
           </div>
         </CardContent>
