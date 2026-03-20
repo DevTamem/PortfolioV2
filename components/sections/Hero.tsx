@@ -1,10 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
+import { ArrowDown } from 'lucide-react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { personalInfo, socialLinks } from '@/lib/data'
+import { personalInfo } from '@/lib/data'
 
 export function Hero() {
   const containerVariants = {
@@ -79,48 +79,13 @@ export function Hero() {
             {/* CTA Buttons */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8"
+              className="flex flex-wrap gap-4 justify-center lg:justify-start"
             >
               <a href="#projects">
                 <Button variant="primary" size="lg">View Projects</Button>
               </a>
               <a href="#contact">
                 <Button variant="secondary" size="lg">Contact Me</Button>
-              </a>
-            </motion.div>
-
-            {/* Social links */}
-            <motion.div
-              variants={itemVariants}
-              className="flex gap-4 justify-center lg:justify-start"
-            >
-              <a
-                href={socialLinks.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full bg-surface border border-border text-secondary
-                         hover:text-accent hover:border-accent/30 transition-all duration-300"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-              <a
-                href={socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full bg-surface border border-border text-secondary
-                         hover:text-accent hover:border-accent/30 transition-all duration-300"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href={`mailto:${socialLinks.email}`}
-                className="p-3 rounded-full bg-surface border border-border text-secondary
-                         hover:text-accent hover:border-accent/30 transition-all duration-300"
-                aria-label="Email"
-              >
-                <Mail className="w-5 h-5" />
               </a>
             </motion.div>
           </div>
@@ -135,19 +100,21 @@ export function Hero() {
               <div className="absolute inset-0 rounded-full border-2 border-accent/20 animate-pulse" />
 
               {/* Image container */}
-              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-accent/20 to-accent/5 overflow-hidden border-4 border-surface shadow-soft-lg">
-                {/* Placeholder with initials - replace with actual image later */}
-                <div className="w-full h-full flex items-center justify-center bg-highlight">
-                  <span className="text-6xl md:text-7xl font-heading font-bold text-accent/40">
-                    {personalInfo.name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
+              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-accent/20 to-accent/5 overflow-hidden border-4 border-surface shadow-soft-lg group cursor-pointer">
+                {/* Main image */}
                 <Image
                   src="/images/profile.jpg"
                   alt={personalInfo.name}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-opacity duration-500 ease-in-out group-hover:opacity-0"
                   priority
+                />
+                {/* Hover image */}
+                <Image
+                  src="/images/pfp2.jpg"
+                  alt={`${personalInfo.name} alternate`}
+                  fill
+                  className="object-cover transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100"
                 />
               </div>
             </div>

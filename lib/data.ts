@@ -113,6 +113,7 @@ export const projects: Project[] = [
 export const socialLinks = {
   github: 'https://github.com/DevTamem',
   linkedin: 'https://www.linkedin.com/in/tamem-al-tamsha-b33897385/',
+  instagram: 'https://www.instagram.com/devtamem',
   email: 'altamshatamem@gmail.com',
 }
 
