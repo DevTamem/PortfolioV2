@@ -49,10 +49,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setTheme(prev => prev === 'light' ? 'dark' : 'light')
   }
 
-  if (!mounted) {
-    return null
-  }
-
+  // Always render children to prevent flash, theme is handled by inline script
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
