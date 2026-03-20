@@ -26,6 +26,27 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    const targetId = href.replace('#', '')
+    const targetElement = document.getElementById(targetId)
+
+    if (targetElement) {
+      setIsMobileMenuOpen(false)
+
+      // Use a small timeout to ensure mobile menu closes first
+      setTimeout(() => {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        })
+      }, 100)
+
+      // Update URL
+      window.history.pushState(null, '', href)
+    }
+  }
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -55,6 +76,7 @@ export function Header() {
             <a
               key={link.label}
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="text-secondary hover:text-accent font-medium transition-colors relative group"
             >
               {link.label}
@@ -85,18 +107,18 @@ export function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-background/95 backdrop-blur-md border-b border-border overflow-hidden"
+            className="md:hidden bg-background/95 backdrop-blur-md border-b border-border overflow-hidden relative z-50"
           >
             <div className="container-custom px-6 py-4 flex flex-col gap-4">
               {navLinks.map((link, index) => (
                 <motion.a
                   key={link.label}
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="text-secondary hover:text-accent font-medium py-2 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-secondary hover:text-accent font-medium py-2 transition-colors block"
                 >
                   {link.label}
                 </motion.a>
