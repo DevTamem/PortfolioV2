@@ -89,6 +89,25 @@ export const projects: Project[] = [
     ],
     links: {},
   },
+  {
+    title: 'Pomodoro Timer',
+    description: 'A cute productivity timer with an adorable mascot companion',
+    longDescription: 'A cute, React-based web application built with Vite to help users master the 50/10 Productivity Technique. Focus for 50 minutes, rest for 10, and maintain your peak flow state with an adorable mascot companion.',
+    image: '/images/PomodoroSS.png',
+    technologies: [
+      {
+        category: 'Frontend',
+        items: ['React 19', 'Vite 8', 'Lucide React', 'CSS3 Animations'],
+      },
+      {
+        category: 'Features',
+        items: ['Web Audio API', 'Session Tracking', 'Streak Counter', 'Custom Timers'],
+      },
+    ],
+    links: {
+      github: 'https://github.com/DevTamem/PomodoroTimer',
+    },
+  },
 ]
 
 export const socialLinks = {
