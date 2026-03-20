@@ -87,7 +87,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
               </a>
             )}
             {project.inProgress && !project.links.github && !project.links.live && (
-              <Badge variant="secondary" className="inline-flex items-center gap-1.5 px-3 py-1.5">
+              <Badge variant="outline" className="inline-flex items-center gap-1.5 px-3 py-1.5">
                 <Clock className="w-3.5 h-3.5" />
                 In Progress
               </Badge>
