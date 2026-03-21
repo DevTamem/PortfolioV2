@@ -22,9 +22,6 @@ export function Footer() {
             <h3 className="font-heading font-bold text-primary text-lg">
               {personalInfo.name}
             </h3>
-            <p className="text-secondary text-sm">
-              {personalInfo.title}
-            </p>
           </motion.div>
 
           {/* Center - Social links */}

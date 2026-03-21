@@ -16,7 +16,7 @@ const sora = Sora({
 })
 
 export const metadata: Metadata = {
-  title: 'Tamem Al Tamsha - Software Engineering Student',
+  title: 'Tamem Al Tamsha',
   description: 'Personal portfolio of a Software Engineering student passionate about building real-world applications.',
   keywords: ['portfolio', 'software engineer', 'developer', 'react', 'typescript', 'nodejs'],
 }
