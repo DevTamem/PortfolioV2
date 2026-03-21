@@ -126,7 +126,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
+          className="absolute bottom-8 left-0 right-0 flex justify-center hidden md:block"
         >
           <motion.a
             href="#about"

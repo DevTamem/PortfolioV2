@@ -121,7 +121,7 @@ export const personalInfo = {
   name: 'Tamem Al Tamsha',
   title: 'Software Engineering Student',
   university: 'Ostim Technical University',
-  location: 'Turkey',
+  location: 'Türkiye',
   bio: `I'm a Software Engineering student passionate about building real-world applications
         and continuously improving my development skills. I love turning ideas into code and
         creating things that make a difference.`,
